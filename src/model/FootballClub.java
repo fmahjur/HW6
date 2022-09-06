@@ -9,6 +9,9 @@ public class FootballClub extends SportClub {
     public FootballClub() {
 
     }
+    public FootballClub(String name){
+        this.nameOfTheClub = name;
+    }
 
     public FootballClub(String nameOfTheClub, int wins, int defeats, int goalsReceived2,
                         int defeatsScored, int points, int matches) {
