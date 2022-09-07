@@ -9,7 +9,8 @@ public class FootballClub extends SportClub {
     public FootballClub() {
 
     }
-    public FootballClub(String name){
+
+    public FootballClub(String name) {
         this.nameOfTheClub = name;
     }
 
