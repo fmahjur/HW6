@@ -11,7 +11,7 @@ import static java.lang.System.exit;
 
 public class VolleyballMenu {
     public void start() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("• 1 : Create a new football club");
         System.out.println("• 2 : Delete a football club");
         System.out.println("• 3 : Display the club status");
@@ -19,7 +19,7 @@ public class VolleyballMenu {
         System.out.println("• 5 : Add a new play and update Score");
         System.out.println("• 6 : Exit");
         System.out.print("Enter your choice : ");
-        String choice = sc.next();
+        String choice = scanner.next();
         switch (choice) {
             case "1":
                 addVolleyballClub();

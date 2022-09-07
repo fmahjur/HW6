@@ -9,7 +9,7 @@ import static java.lang.System.exit;
 
 public class FootballMenu {
     public void start() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("• 1 : Create a new football club");
         System.out.println("• 2 : Delete a football club");
         System.out.println("• 3 : Display the club status");
@@ -17,7 +17,7 @@ public class FootballMenu {
         System.out.println("• 5 : Add a new play and update Score");
         System.out.println("• 6 : Exit");
         System.out.print("Enter your choice : ");
-        String choice = sc.next();
+        String choice = scanner.next();
         switch (choice) {
             case "1":
                 addFootballClub();
@@ -45,32 +45,32 @@ public class FootballMenu {
     }
 
     public void addFootballClub() {
-        Scanner sc1 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         FootballClub football = new FootballClub("", 0, 0, 0, 0, 0, 0, 0);
         System.out.print("Please Enter the name of the football club : ");
-        String name = (sc1.nextLine());
+        String name = (scanner.nextLine());
         System.out.print("Do you want to add club details info? (Y/N):");
-        String choices = sc1.nextLine();
+        String choices = scanner.nextLine();
         FootballLeague club = new FootballLeague();
         if (choices.equalsIgnoreCase("Y")) {
             System.out.print("please enter the number of wins: ");
-            int wins = sc1.nextInt();
+            int wins = scanner.nextInt();
             System.out.print("please enter the number of defeats: ");
-            int defeats = sc1.nextInt();
+            int defeats = scanner.nextInt();
             System.out.print("please enter the number of draws: ");
-            int draws = sc1.nextInt();
+            int draws = scanner.nextInt();
             System.out.print("please enter the number of goals received: ");
-            int goalsReceived = sc1.nextInt();
+            int goalsReceived = scanner.nextInt();
             System.out.print("please enter the number of goals scored: ");
-            int defeatsScored = sc1.nextInt();
+            int defeatsScored = scanner.nextInt();
             System.out.print("please enter the number of points: ");
-            int points = sc1.nextInt();
+            int points = scanner.nextInt();
             System.out.print("please enter the number of matches played: ");
-            int matches = sc1.nextInt();
+            int matches = scanner.nextInt();
             //send the object and other details to the football class
             club.addClub(football, name, wins, defeats, draws, goalsReceived, defeatsScored, points, matches);
             System.out.println("Do you want to add another club? (Y/N)");
-            String choice = sc1.nextLine();
+            String choice = scanner.nextLine();
 
             if (choice.equalsIgnoreCase("Y")) {
                 addFootballClub();
@@ -93,12 +93,12 @@ public class FootballMenu {
     }
 
     public void deleteFootballClub() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("List of clubs in this league:");
         FootballLeague football = new FootballLeague();
         football.displayTournamentTable();
         System.out.println("Please Enter the name of the football club you want to delete : ");
-        String deletedClubName = sc.nextLine();
+        String deletedClubName = scanner.nextLine();
         boolean result = football.deleteClub(deletedClubName);
         if (result == true) {
             System.out.println(deletedClubName + "removed from this tournament!");
@@ -107,7 +107,7 @@ public class FootballMenu {
         }
 
         System.out.println("Do you want to delete another club? (Y/N)");
-        String choice = sc.nextLine();
+        String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y")) {
             deleteFootballClub();
         } else if (choice.equalsIgnoreCase("N")) {
@@ -118,15 +118,15 @@ public class FootballMenu {
     }
 
     public void showClubDetailsInfo() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("List of clubs in this league:");
         FootballLeague football = new FootballLeague();
         football.displayTournamentTable();
         System.out.println("please enter the club name that you want to see details: ");
-        String name = sc.nextLine();
+        String name = scanner.nextLine();
         football.showClubInfo(name);
         System.out.println("Do you want to see another club info? (Y/N)");
-        String choice = sc.nextLine();
+        String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y")) {
             showClubDetailsInfo();
         } else if (choice.equalsIgnoreCase("N")) {
@@ -134,32 +134,32 @@ public class FootballMenu {
         } else {
             System.out.println("Please enter a valid input!");
         }
-        sc.close();
+        scanner.close();
     }
 
     public void displayDetailsOfTeamsINLeague() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         FootballLeague footballLeague = new FootballLeague();
         footballLeague.displayTournamentTable();
         System.out.println("Do you want to go back and chose another option? (Y/N)");
-        String choice = sc.nextLine();
+        String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y"))
             start();
         else
-            sc.close();
+            scanner.close();
     }
 
     public void addNewPlay() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         FootballLeague footballLeague = new FootballLeague();
         System.out.println("Please enter the name of team1: ");
-        String team1 = sc.nextLine();
+        String team1 = scanner.nextLine();
         System.out.println("Please enter the name of team2: ");
-        String team2 = sc.nextLine();
+        String team2 = scanner.nextLine();
         System.out.println("Please enter the number of goals scored by team1: ");
-        int goalsScoredByTeam1 = sc.nextInt();
+        int goalsScoredByTeam1 = scanner.nextInt();
         System.out.println("Please enter the number of goals scored by team2: ");
-        int goalsScoredByTeam2 = sc.nextInt();
+        int goalsScoredByTeam2 = scanner.nextInt();
         footballLeague.addPlayAndUpdateScores(team1, team2, goalsScoredByTeam1, goalsScoredByTeam2);
     }
 }
