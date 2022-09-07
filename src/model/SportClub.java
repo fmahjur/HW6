@@ -6,6 +6,7 @@ public abstract class SportClub {
     String nameOfTheClub;
     int numberOFWins;
     int numberOfDefeats;
+    int numberOfDraws;
     int numberOfPoints;
     int numberOfPlayed;
 
@@ -31,6 +32,14 @@ public abstract class SportClub {
 
     public void setNumberOfDefeats(int numberOfDefeats) {
         this.numberOfDefeats = numberOfDefeats;
+    }
+
+    public int getNumberOfDraws() {
+        return numberOfDraws;
+    }
+
+    public void setNumberOfDraws(int numberOfDraws) {
+        this.numberOfDraws = numberOfDraws;
     }
 
     public int getNumberOfPoints() {
