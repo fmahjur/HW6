@@ -13,15 +13,15 @@ public class FootballClub extends SportClub {
         this.nameOfTheClub = name;
     }
 
-    public FootballClub(String nameOfTheClub, int wins, int defeats, int goalsReceived2,
-                        int defeatsScored, int points, int matches) {
+    public FootballClub(String nameOfTheClub, int numberOFWins, int numberOfDefeats, int goalsReceived,
+                        int goalsScored, int numberOfPoints, int numberOfPlayed) {
         this.nameOfTheClub = nameOfTheClub;
-        this.numberOFWins = wins;
-        this.numberOfDefeats = defeats;
-        this.goalsReceived = goalsReceived2;
-        this.goalsScored = defeatsScored;
-        this.numberOfPoints = points;
-        this.numberOfPlayed = matches;
+        this.numberOFWins = numberOFWins;
+        this.numberOfDefeats = numberOfDefeats;
+        this.goalsReceived = goalsReceived;
+        this.goalsScored = goalsScored;
+        this.numberOfPoints = numberOfPoints;
+        this.numberOfPlayed = numberOfPlayed;
     }
 
     public int getGoalsReceived() {
