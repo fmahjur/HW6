@@ -3,6 +3,7 @@ package service;
 import model.FootballClub;
 import model.VolleyballClub;
 import view.ShowFootballDetailsTable;
+import view.ShowVolleyballDetailsTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +81,7 @@ public class VolleyballLeague implements League {
         }
         System.out.println("");
     }
+
     @Override
     public void showClubInfo(String clubName) {
         ShowVolleyballDetailsTable tournamentDetailTable = new ShowVolleyballDetailsTable();
@@ -91,8 +93,7 @@ public class VolleyballLeague implements League {
 
     @Override
     public void displayTournamentTable() {
-        ShowVoleyballDetailsTable tournamentDetailTable = new ShowVoleyballDetailsTable();
+        ShowVolleyballDetailsTable tournamentDetailTable = new ShowVolleyballDetailsTable();
         tournamentDetailTable.displayLeagueTable(volleyballClubList);
-
     }
 }
