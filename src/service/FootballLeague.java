@@ -34,7 +34,11 @@ public class FootballLeague implements League {
 
     @Override
     public void addPlay(String club1, String club2) {
-
+        for (int i = 0; i < football.size(); i++) {
+            if (football.get(i).getNameOfTheClub().equals(club1) || football.get(i).getNameOfTheClub().equals(club2)) {
+                football.get(i).setNumberOfPlayed(football.get(i).getNumberOfPlayed() + 1);
+            }
+        }
     }
 
     @Override
