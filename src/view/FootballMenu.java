@@ -7,18 +7,17 @@ import java.util.Scanner;
 
 import static java.lang.System.exit;
 
-public class Menu {
+public class FootballMenu {
     public void start() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("• Press 1 : Create a new football club");
-        System.out.println("• Press 2 : Delete a football club");
-        System.out.println("• Press 3 : Display the club status");
-        System.out.println("• Press 4 : Display the league Table");
-        System.out.println("• Press 5 : Add a new play and update Score");
-        System.out.println("• Press 6 : Exit");
+        System.out.println("• 1 : Create a new football club");
+        System.out.println("• 2 : Delete a football club");
+        System.out.println("• 3 : Display the club status");
+        System.out.println("• 4 : Display the league Table");
+        System.out.println("• 5 : Add a new play and update Score");
+        System.out.println("• 6 : Exit");
         System.out.print("Enter your choice : ");
-        String choice;
-        choice = sc.next();
+        String choice = sc.next();
         switch (choice) {
             case "1":
                 addFootballClub();
