@@ -1,6 +1,7 @@
 package service;
 
 import model.FootballClub;
+import view.ShowFootballDetailsTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +38,17 @@ public class FootballLeague implements League {
     }
 
     @Override
-    public void showClubInfo(String name) {
+    public void showClubsInfo(String name) {
+        for (int i = 0; i < football.size(); i++) {
+            System.out.print(football.get(i).getNameOfTheClub() + " | ");
+        }
+        System.out.println("");
 
     }
 
     @Override
     public void displayTournamentTable() {
-
+        ShowFootballDetailsTable tournamentDetailTable = new ShowFootballDetailsTable();
+        tournamentDetailTable.displayLeagueTable(football);
     }
 }

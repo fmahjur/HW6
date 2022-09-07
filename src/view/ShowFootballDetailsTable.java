@@ -15,7 +15,7 @@ public class ShowFootballDetailsTable {
         System.out.println("----------------------------------------------------------------------------");
     }
 
-    public void displayPremierLeagueTable(List<FootballClub> football){
+    public void displayLeagueTable(List<FootballClub> football){
         System.out.format("--------------------------");
         System.out.format("| Club Name       |Points|");
         System.out.format("--------------------------");
@@ -25,5 +25,4 @@ public class ShowFootballDetailsTable {
         System.out.format("--------------------------");
     }
 
-}
 }
