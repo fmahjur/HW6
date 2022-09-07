@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public abstract class SportClub {
     String nameOfTheClub;
-    int countOFWins;
-    int countOfDefeats;
+    int numberOFWins;
+    int numberOfDefeats;
     int numberOfPoints;
     int numberOfPlayed;
 
@@ -17,20 +17,20 @@ public abstract class SportClub {
         this.nameOfTheClub = nameOfTheClub;
     }
 
-    public int getCountOFWins() {
-        return countOFWins;
+    public int getNumberOFWins() {
+        return numberOFWins;
     }
 
-    public void setCountOFWins(int countOFWins) {
-        this.countOFWins = countOFWins;
+    public void setNumberOFWins(int numberOFWins) {
+        this.numberOFWins = numberOFWins;
     }
 
-    public int getCountOfDefeats() {
-        return countOfDefeats;
+    public int getNumberOfDefeats() {
+        return numberOfDefeats;
     }
 
-    public void setCountOfDefeats(int countOfDefeats) {
-        this.countOfDefeats = countOfDefeats;
+    public void setNumberOfDefeats(int numberOfDefeats) {
+        this.numberOfDefeats = numberOfDefeats;
     }
 
     public int getNumberOfPoints() {
@@ -54,19 +54,19 @@ public abstract class SportClub {
         if (this == o) return true;
         if (!(o instanceof SportClub)) return false;
         SportClub sportClub = (SportClub) o;
-        return getCountOFWins() == sportClub.getCountOFWins() && getCountOfDefeats() == sportClub.getCountOfDefeats() && getNumberOfPoints() == sportClub.getNumberOfPoints() && getNumberOfPlayed() == sportClub.getNumberOfPlayed() && getNameOfTheClub().equals(sportClub.getNameOfTheClub());
+        return getNumberOFWins() == sportClub.getNumberOFWins() && getNumberOfDefeats() == sportClub.getNumberOfDefeats() && getNumberOfPoints() == sportClub.getNumberOfPoints() && getNumberOfPlayed() == sportClub.getNumberOfPlayed() && getNameOfTheClub().equals(sportClub.getNameOfTheClub());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNameOfTheClub(), getCountOFWins(), getCountOfDefeats(), getNumberOfPoints(), getNumberOfPlayed());
+        return Objects.hash(getNameOfTheClub(), getNumberOFWins(), getNumberOfDefeats(), getNumberOfPoints(), getNumberOfPlayed());
     }
 
     @Override
     public String toString() {
         return "nameOfTheClub='" + nameOfTheClub + '\'' +
-                ", countOFWins=" + countOFWins +
-                ", countOfDefeats=" + countOfDefeats +
+                ", countOFWins=" + numberOFWins +
+                ", countOfDefeats=" + numberOfDefeats +
                 ", numberOfPoints=" + numberOfPoints +
                 ", numberOfPlayed=" + numberOfPlayed;
     }

@@ -16,8 +16,8 @@ public class FootballClub extends SportClub {
     public FootballClub(String nameOfTheClub, int wins, int defeats, int goalsReceived2,
                         int defeatsScored, int points, int matches) {
         this.nameOfTheClub = nameOfTheClub;
-        this.countOFWins = wins;
-        this.countOfDefeats = defeats;
+        this.numberOFWins = wins;
+        this.numberOfDefeats = defeats;
         this.goalsReceived = goalsReceived2;
         this.goalsScored = defeatsScored;
         this.numberOfPoints = points;
@@ -58,8 +58,8 @@ public class FootballClub extends SportClub {
         return "goalsReceived=" + goalsReceived +
                 ", goalsScored=" + goalsScored +
                 ", nameOfTheClub='" + nameOfTheClub + '\'' +
-                ", countOFWins=" + countOFWins +
-                ", countOfDefeats=" + countOfDefeats +
+                ", countOFWins=" + numberOFWins +
+                ", countOfDefeats=" + numberOfDefeats +
                 ", numberOfPoints=" + numberOfPoints +
                 ", numberOfPlayed=" + numberOfPlayed;
     }
