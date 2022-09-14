@@ -65,4 +65,15 @@ public class FootballClub extends SportClub {
                 "|        " + numberOfPlayed + "       |\n" +
                 "------------------------------------------------------------------------------------------------------------------------------\n";
     }
+
+    public String toStringForLeagueTable() {
+        return "| " + nameOfTheClub + " " +
+                "|         " + goalsReceived + "         " +
+                "|      " + goalsScored + "      " +
+                "|       " + numberOFWins + "      " +
+                "|        " + numberOfDefeats + "        " +
+                "|       " + numberOfDraws + "       " +
+                "|        " + numberOfPoints + "       " +
+                "|        " + numberOfPlayed + "       |";
+    }
 }

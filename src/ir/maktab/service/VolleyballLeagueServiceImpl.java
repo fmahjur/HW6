@@ -1,15 +1,15 @@
 package ir.maktab.service;
 
-import ir.maktab.model.entity.FootballClub;
 import ir.maktab.model.entity.VolleyballClub;
 import ir.maktab.service.interfaces.LeagueService;
-import ir.maktab.view.ShowVolleyballDetailsTable;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class VolleyballLeagueServiceImpl implements LeagueService {
     static List<VolleyballClub> volleyballClubList = new ArrayList<>();
+    static List<VolleyballClub> sortedVolleyballClubList;
 
     @Override
     public void addClub(String clubName) {
@@ -64,12 +64,23 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
         }
     }
 
+    @Override
+    public void sortedClubsByPoint() {
+        Comparator<VolleyballClub> compareByPoints = Comparator.comparing(VolleyballClub::getNumberOfPoints)
+                .thenComparing(VolleyballClub::getNumberOfRoundsWin)
+                .thenComparing(VolleyballClub::getNumberOfRoundsDefeat);
+        sortedVolleyballClubList = volleyballClubList.stream()
+                .sorted(compareByPoints).toList();
+    }
+
+    @Override
     public void showClubsInLeague() {
+        sortedClubsByPoint();
         String alignFormat = "| %-15s | %-4d |%n";
         System.out.println("--------------------------%n");
         System.out.println("|   club name   | points |%n");
         System.out.println("--------------------------%n");
-        for (VolleyballClub club : volleyballClubList) {
+        for (VolleyballClub club : sortedVolleyballClubList) {
             System.out.format(alignFormat, club.getNameOfTheClub() + "|" + club.getNumberOfPoints());
             System.out.println("--------------------------%n");
         }
@@ -77,17 +88,15 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public void showClubInfo(String clubName) {
-        ShowVolleyballDetailsTable tournamentDetailTable = new ShowVolleyballDetailsTable();
-        for (VolleyballClub volleyballClub : volleyballClubList) {
-            if (volleyballClub.getNameOfTheClub().equals(clubName))
-                tournamentDetailTable.displayDetails(volleyballClub);
-        }
-    }
-
-    @Override
     public void displayTournamentTable() {
-        ShowVolleyballDetailsTable tournamentDetailTable = new ShowVolleyballDetailsTable();
-        tournamentDetailTable.displayLeagueTable(volleyballClubList);
+        sortedClubsByPoint();
+        System.out.println("-----------------------------------------------------------------------------------------------------------------");
+        System.out.println("\"| numberOfRoundsWin | numberOfRoundsDefeat | numberOfWins | numberOfDefeats | numberOfPoints | numberOfPlayed |");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------");
+        for (VolleyballClub club : sortedVolleyballClubList) {
+            System.out.println(club.toStringForLeagueTable());
+            System.out.println("-------------------------------------------------------------------------------------------------------------");
+        }
+        System.out.println();
     }
 }

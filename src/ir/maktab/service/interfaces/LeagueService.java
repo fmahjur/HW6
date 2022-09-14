@@ -7,9 +7,9 @@ public interface LeagueService {
 
     void addPlayAndUpdateScores(String club1, String club2, int scoredByTeam1, int scoredByTeam2);
 
-    void showClubsInLeague();
+    void sortedClubsByPoint();
 
-    void showClubInfo(String clubName);
+    void showClubsInLeague();
 
     void displayTournamentTable();
 

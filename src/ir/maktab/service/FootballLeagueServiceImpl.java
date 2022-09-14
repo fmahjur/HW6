@@ -1,16 +1,15 @@
 package ir.maktab.service;
 
 import ir.maktab.model.entity.FootballClub;
-import ir.maktab.service.compare.SortByPoints;
 import ir.maktab.service.interfaces.LeagueService;
-import ir.maktab.view.ShowFootballDetailsTable;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class FootballLeagueServiceImpl implements LeagueService {
     static List<FootballClub> footballClubList = new ArrayList<>();
+    static List<FootballClub> sortedFootballClubList;
 
     @Override
     public void addClub(String clubName) {
@@ -64,14 +63,23 @@ public class FootballLeagueServiceImpl implements LeagueService {
         }
     }
 
+    @Override
+    public void sortedClubsByPoint() {
+        Comparator<FootballClub> compareByPoints = Comparator.comparing(FootballClub::getNumberOfPoints)
+                .thenComparing(FootballClub::getGoalsScored)
+                .thenComparing(FootballClub::getGoalsReceived);
+        sortedFootballClubList = footballClubList.stream()
+                .sorted(compareByPoints).toList();
+    }
 
+    @Override
     public void showClubsInLeague() {
-        Collections.sort(footballClubList, new SortByPoints());
+        sortedClubsByPoint();
         String alignFormat = "| %-15s | %-4d |%n";
         System.out.println("--------------------------%n");
         System.out.println("|   club name   | points |%n");
         System.out.println("--------------------------%n");
-        for (FootballClub club : footballClubList) {
+        for (FootballClub club : sortedFootballClubList) {
             System.out.format(alignFormat, club.getNameOfTheClub() + "|" + club.getNumberOfPoints());
             System.out.println("--------------------------%n");
         }
@@ -79,17 +87,15 @@ public class FootballLeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public void showClubInfo(String name) {
-        ShowFootballDetailsTable tournamentDetailTable = new ShowFootballDetailsTable();
-        for (FootballClub club : footballClubList) {
-            if (club.getNameOfTheClub().equals(name))
-                tournamentDetailTable.displayDetails(club);
-        }
-    }
-
-    @Override
     public void displayTournamentTable() {
-        ShowFootballDetailsTable tournamentDetailTable = new ShowFootballDetailsTable();
-        tournamentDetailTable.displayLeagueTable(footballClubList);
+        sortedClubsByPoint();
+        System.out.println("------------------------------------------------------------------------------------------------");
+        System.out.println("| club name | Wins | Defeats | Draws | Goals Received | Goals Scored | Points | Matched Played |");
+        System.out.println("------------------------------------------------------------------------------------------------");
+        for (FootballClub club : sortedFootballClubList) {
+            System.out.format(club.toStringForLeagueTable());
+            System.out.println("------------------------------------------------------------------------------------------------");
+        }
+        System.out.println();
     }
 }

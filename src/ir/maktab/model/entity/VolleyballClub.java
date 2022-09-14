@@ -67,4 +67,14 @@ public class VolleyballClub extends SportClub {
                 "|        " + numberOfPlayed + "       |\n" +
                 "---------------------------------------------------------------------------------------------------------------\n";
     }
+
+    public String toStringForLeagueTable() {
+        return "| " + nameOfTheClub + " " +
+                "|         " + numberOfRoundsWin + "         " +
+                "|           " + NumberOfRoundsDefeat + "          " +
+                "|       " + numberOFWins + "      " +
+                "|        " + numberOfDefeats + "        " +
+                "|        " + numberOfPoints + "       " +
+                "|        " + numberOfPlayed + "       |";
+    }
 }

@@ -1,5 +1,6 @@
 package ir.maktab;
 
+import ir.maktab.model.entity.FootballClub;
 import ir.maktab.model.entity.VolleyballClub;
 import ir.maktab.view.FootballMenu;
 import ir.maktab.view.VolleyballMenu;
@@ -10,8 +11,10 @@ import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-        VolleyballClub volleyballClub = new VolleyballClub("test", 4, 5, 9, 5, 5, 4);
-        System.out.printf(volleyballClub.toString());
+        VolleyballClub volleyballClub = new VolleyballClub("vTest", 4, 5, 9, 5, 5, 4);
+        System.out.println(volleyballClub.toStringForLeagueTable());
+        FootballClub footballClub = new FootballClub("fTest", 4, 5, 3, 4, 5, 8, 6);
+        System.out.println(footballClub.toStringForLeagueTable());
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("• 1 : Football League");
