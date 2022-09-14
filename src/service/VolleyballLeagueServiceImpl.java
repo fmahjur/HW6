@@ -1,12 +1,13 @@
 package service;
 
 import model.VolleyballClub;
+import service.interfaces.LeagueService;
 import view.ShowVolleyballDetailsTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VolleyballLeagueService implements LeagueService {
+public class VolleyballLeagueServiceImpl implements LeagueService {
     static List<VolleyballClub> volleyballClubList = new ArrayList<>();
 
     @Override

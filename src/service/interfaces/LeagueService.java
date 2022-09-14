@@ -1,4 +1,4 @@
-package service;
+package service.interfaces;
 
 public interface LeagueService {
     void addClub(String clubName);

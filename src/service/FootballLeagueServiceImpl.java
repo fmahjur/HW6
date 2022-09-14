@@ -1,12 +1,13 @@
 package service;
 
 import model.FootballClub;
+import service.interfaces.LeagueService;
 import view.ShowFootballDetailsTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FootballLeagueService implements LeagueService {
+public class FootballLeagueServiceImpl implements LeagueService {
     static List<FootballClub> footballClubList = new ArrayList<>();
 
     @Override

@@ -1,7 +1,7 @@
 package view;
 
 import model.FootballClub;
-import service.FootballLeagueService;
+import service.FootballLeagueServiceImpl;
 
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public class FootballMenu {
         String name = (scanner.nextLine());
         System.out.print("Do you want to add club details info? (Y/N):");
         String choices = scanner.nextLine();
-        FootballLeagueService club = new FootballLeagueService();
+        FootballLeagueServiceImpl club = new FootballLeagueServiceImpl();
         if (choices.equalsIgnoreCase("Y")) {
             System.out.print("please enter the number of wins: ");
             int wins = scanner.nextInt();
@@ -82,7 +82,7 @@ public class FootballMenu {
 
     public void deleteFootballClub() {
         System.out.println("List of clubs in this league:");
-        FootballLeagueService football = new FootballLeagueService();
+        FootballLeagueServiceImpl football = new FootballLeagueServiceImpl();
         football.displayTournamentTable();
         System.out.println("Please Enter the name of the football club you want to delete : ");
         String deletedClubName = scanner.nextLine();
@@ -106,7 +106,7 @@ public class FootballMenu {
 
     public void showClubDetailsInfo() {
         System.out.println("List of clubs in this league:");
-        FootballLeagueService football = new FootballLeagueService();
+        FootballLeagueServiceImpl football = new FootballLeagueServiceImpl();
         football.displayTournamentTable();
         System.out.println("please enter the club name that you want to see details: ");
         String name = scanner.nextLine();
@@ -124,7 +124,7 @@ public class FootballMenu {
     }
 
     public void displayDetailsOfTeamsINLeague() {
-        FootballLeagueService footballLeague = new FootballLeagueService();
+        FootballLeagueServiceImpl footballLeague = new FootballLeagueServiceImpl();
         footballLeague.displayTournamentTable();
         System.out.println("Do you want to go back and chose another option? (Y/N)");
         String choice = scanner.nextLine();
@@ -135,7 +135,7 @@ public class FootballMenu {
     }
 
     public void addNewPlay() {
-        FootballLeagueService footballLeague = new FootballLeagueService();
+        FootballLeagueServiceImpl footballLeague = new FootballLeagueServiceImpl();
         System.out.println("Please enter the name of team1: ");
         String team1 = scanner.nextLine();
         System.out.println("Please enter the name of team2: ");

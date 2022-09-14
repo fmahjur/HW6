@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Objects;
 
 public abstract class SportClub {
@@ -9,6 +10,7 @@ public abstract class SportClub {
     int numberOfDraws;
     int numberOfPoints;
     int numberOfPlayed;
+    List<Player> players;
 
     public String getNameOfTheClub() {
         return nameOfTheClub;
@@ -56,6 +58,14 @@ public abstract class SportClub {
 
     public void setNumberOfPlayed(int numberOfPlayed) {
         this.numberOfPlayed = numberOfPlayed;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 
     @Override

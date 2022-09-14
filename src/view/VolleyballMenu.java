@@ -1,7 +1,7 @@
 package view;
 
 import model.VolleyballClub;
-import service.VolleyballLeagueService;
+import service.VolleyballLeagueServiceImpl;
 
 import java.util.Scanner;
 
@@ -40,7 +40,7 @@ public class VolleyballMenu {
         String name = scanner.nextLine();
         System.out.print("Do you want to add club details info? (Y/N):");
         String choices = scanner.nextLine();
-        VolleyballLeagueService volleyballLeague = new VolleyballLeagueService();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         if (choices.equalsIgnoreCase("Y")) {
             System.out.print("please enter the number of wins: ");
             int wins = scanner.nextInt();
@@ -81,7 +81,7 @@ public class VolleyballMenu {
 
     public void deleteVolleyballClub() {
         System.out.println("List of clubs in this league:");
-        VolleyballLeagueService volleyballLeague = new VolleyballLeagueService();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         volleyballLeague.displayTournamentTable();
         System.out.println("Please Enter the name of the volleyball club you want to delete : ");
         String deletedClubName = scanner.nextLine();
@@ -105,7 +105,7 @@ public class VolleyballMenu {
 
     public void showClubDetailsInfo() {
         System.out.println("List of clubs in this league:");
-        VolleyballLeagueService volleyballLeague = new VolleyballLeagueService();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         volleyballLeague.displayTournamentTable();
         System.out.println("please enter the club name that you want to see details: ");
         String name = scanner.nextLine();
@@ -123,7 +123,7 @@ public class VolleyballMenu {
     }
 
     public void displayDetailsOfTeamsINLeague() {
-        VolleyballLeagueService volleyballLeague = new VolleyballLeagueService();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         volleyballLeague.displayTournamentTable();
         System.out.println("Do you want to go back and chose another option? (Y/N)");
         String choice = scanner.nextLine();
@@ -134,7 +134,7 @@ public class VolleyballMenu {
     }
 
     public void addNewPlay() {
-        VolleyballLeagueService volleyballLeague = new VolleyballLeagueService();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         System.out.println("Please enter the name of team1: ");
         String team1 = scanner.nextLine();
         System.out.println("Please enter the name of team2: ");
