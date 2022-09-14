@@ -16,13 +16,6 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
         volleyballClubList.add(volleyballClub);
     }
 
-    public void addClub(VolleyballClub club, String nameOfTheClub, int numberOFWins, int numberOfDefeats,
-                        int numberOfRoundsWin, int numberOfRoundsDefeat, int numberOfPoints, int numberOfPlayed) {
-        club = new VolleyballClub(nameOfTheClub, numberOFWins, numberOfDefeats,
-                numberOfRoundsWin, numberOfRoundsDefeat, numberOfPoints, numberOfPlayed);
-        volleyballClubList.add(club);
-    }
-
     @Override
     public boolean deleteClub(String clubName) {
         for (int i = 0; i < volleyballClubList.size(); i++) {

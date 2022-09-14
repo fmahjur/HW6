@@ -18,7 +18,7 @@ public class VolleyballClubRepository {
         return instance;
     }
 
-    public void insertFootballClub(VolleyballClub volleyballClub) throws Exception {
+    public void insertVolleyballClub(VolleyballClub volleyballClub) throws Exception {
         String insertQuery = "INSERT INTO volleyball_club (club_name, number_of_wins, number_of_defeats," +
                 " number_of_rounds_win, number_of_rounds_defeat, number_of_points, number_of_played)" +
                 " VALUES (?, ?, ?, ?, ?, ?, ?)";
