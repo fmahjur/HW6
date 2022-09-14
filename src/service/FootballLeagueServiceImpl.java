@@ -1,6 +1,6 @@
 package service;
 
-import model.FootballClub;
+import model.entity.FootballClub;
 import service.interfaces.LeagueService;
 import view.ShowFootballDetailsTable;
 

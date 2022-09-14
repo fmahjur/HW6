@@ -1,6 +1,6 @@
 package view;
 
-import model.FootballClub;
+import model.entity.FootballClub;
 import service.FootballLeagueServiceImpl;
 
 import java.util.Scanner;

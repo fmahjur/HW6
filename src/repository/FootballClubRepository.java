@@ -1,6 +1,6 @@
 package repository;
 
-import model.FootballClub;
+import model.entity.FootballClub;
 
 import java.sql.*;
 import java.util.ArrayList;

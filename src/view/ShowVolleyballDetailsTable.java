@@ -1,6 +1,6 @@
 package view;
 
-import model.VolleyballClub;
+import model.entity.VolleyballClub;
 
 import java.util.List;
 

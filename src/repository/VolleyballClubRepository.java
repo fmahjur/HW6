@@ -1,6 +1,6 @@
 package repository;
 
-import model.VolleyballClub;
+import model.entity.VolleyballClub;
 
 import java.sql.*;
 import java.util.ArrayList;

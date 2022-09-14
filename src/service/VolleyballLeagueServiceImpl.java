@@ -1,6 +1,6 @@
 package service;
 
-import model.VolleyballClub;
+import model.entity.VolleyballClub;
 import service.interfaces.LeagueService;
 import view.ShowVolleyballDetailsTable;
 

@@ -1,9 +1,9 @@
-package model;
+package model.entity;
 
 import java.util.List;
 import java.util.Objects;
 
-public abstract class SportClub {
+public class SportClub {
     String nameOfTheClub;
     int numberOFWins;
     int numberOfDefeats;
