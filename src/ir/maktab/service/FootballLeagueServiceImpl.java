@@ -16,13 +16,6 @@ public class FootballLeagueServiceImpl implements LeagueService {
         footballClubList.add(footballClub);
     }
 
-    public void addClub(FootballClub club, String nameOfTheClub, int numberOFWins, int numberOfDefeats, int numberOfDraws,
-                        int goalsReceived, int goalsScored, int numberOfPoints, int numberOfPlayed) {
-        club = new FootballClub(nameOfTheClub, numberOFWins, numberOfDefeats, numberOfDraws,
-                goalsReceived, goalsScored, numberOfPoints, numberOfPlayed);
-        footballClubList.add(club);
-    }
-
     @Override
     public boolean deleteClub(String name) {
         for (int i = 0; i < footballClubList.size(); i++) {
