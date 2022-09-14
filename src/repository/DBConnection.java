@@ -9,7 +9,7 @@ public class DBConnection {
     private final static String USERNAME = "postgres";
     private final static String PASSWORD = "Rm@38936";
 
-    public static Connection connect() {
+    public static Connection getConnection() {
         try {
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
