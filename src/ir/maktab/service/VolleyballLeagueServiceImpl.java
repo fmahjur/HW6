@@ -1,5 +1,6 @@
 package ir.maktab.service;
 
+import ir.maktab.model.entity.FootballClub;
 import ir.maktab.model.entity.VolleyballClub;
 import ir.maktab.service.interfaces.LeagueService;
 import ir.maktab.view.ShowVolleyballDetailsTable;
@@ -61,6 +62,18 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
                 }
             }
         }
+    }
+
+    public void showClubsInLeague() {
+        String alignFormat = "| %-15s | %-4d |%n";
+        System.out.println("--------------------------%n");
+        System.out.println("|   club name   | points |%n");
+        System.out.println("--------------------------%n");
+        for (VolleyballClub club : volleyballClubList) {
+            System.out.format(alignFormat, club.getNameOfTheClub() + "|" + club.getNumberOfPoints());
+            System.out.println("--------------------------%n");
+        }
+        System.out.println();
     }
 
     @Override
