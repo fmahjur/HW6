@@ -1,6 +1,6 @@
 package ir.maktab.view;
 
-import ir.maktab.entity.VolleyballClub;
+import ir.maktab.model.entity.VolleyballClub;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package ir.maktab.service;
 
-import ir.maktab.entity.VolleyballClub;
+import ir.maktab.model.entity.VolleyballClub;
 import ir.maktab.service.interfaces.LeagueService;
 import ir.maktab.view.ShowVolleyballDetailsTable;
 

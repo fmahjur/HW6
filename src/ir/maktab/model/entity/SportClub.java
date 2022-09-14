@@ -1,4 +1,4 @@
-package ir.maktab.entity;
+package ir.maktab.model.entity;
 
 import java.util.List;
 import java.util.Objects;

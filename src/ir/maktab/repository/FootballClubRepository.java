@@ -1,6 +1,6 @@
 package ir.maktab.repository;
 
-import ir.maktab.entity.FootballClub;
+import ir.maktab.model.entity.FootballClub;
 
 import java.sql.*;
 import java.util.ArrayList;
