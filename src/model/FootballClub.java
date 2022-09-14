@@ -6,10 +6,6 @@ public class FootballClub extends SportClub {
     private int goalsReceived;
     private int goalsScored;
 
-    public FootballClub() {
-
-    }
-
     public FootballClub(String name) {
         this.nameOfTheClub = name;
     }
@@ -45,8 +41,7 @@ public class FootballClub extends SportClub {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FootballClub)) return false;
-        FootballClub that = (FootballClub) o;
+        if (!(o instanceof FootballClub that)) return false;
         return getGoalsReceived() == that.getGoalsReceived() && getGoalsScored() == that.getGoalsScored();
     }
 

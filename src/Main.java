@@ -15,19 +15,16 @@ public class Main {
         String choice;
         choice = scanner.next();
         switch (choice) {
-            case "1":
+            case "1" -> {
                 FootballMenu startFootballMenu = new FootballMenu();
                 startFootballMenu.start();
-                break;
-            case "2":
+            }
+            case "2" -> {
                 VolleyballMenu startVolleyballMenu = new VolleyballMenu();
                 startVolleyballMenu.start();
-                break;
-            case "3":
-                exit(0);
-                break;
-            default:
-                System.out.println("Invalid input! Please input again!");
+            }
+            case "3" -> exit(0);
+            default -> System.out.println("Invalid input! Please input again!");
         }
     }
 }

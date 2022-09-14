@@ -43,9 +43,8 @@ public class VolleyballClub extends SportClub {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof VolleyballClub)) return false;
+        if (!(o instanceof VolleyballClub that)) return false;
         if (!super.equals(o)) return false;
-        VolleyballClub that = (VolleyballClub) o;
         return getNumberOfRoundsWin() == that.getNumberOfRoundsWin() && getNumberOfRoundsDefeat() == that.getNumberOfRoundsDefeat();
     }
 

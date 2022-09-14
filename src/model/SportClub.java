@@ -60,9 +60,10 @@ public abstract class SportClub {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof SportClub)) return false;
-        SportClub sportClub = (SportClub) o;
+        if (this == o)
+            return true;
+        if (!(o instanceof SportClub sportClub))
+            return false;
         return getNumberOFWins() == sportClub.getNumberOFWins() && getNumberOfDefeats() == sportClub.getNumberOfDefeats() && getNumberOfPoints() == sportClub.getNumberOfPoints() && getNumberOfPlayed() == sportClub.getNumberOfPlayed() && getNameOfTheClub().equals(sportClub.getNameOfTheClub());
     }
 

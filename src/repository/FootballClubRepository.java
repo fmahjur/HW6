@@ -6,21 +6,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static repository.DBConnection.connect;
+
 public class FootballClubRepository {
-    private final static String URL = "jdbc:postgresql://127.0.0.1:5432/league";
-    private final static String USERNAME = "postgres";
-    private final static String PASSWORD = "Rm@38936";
 
-    public Connection connect() {
-        try {
-            return DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public void insertFootballClub(FootballClub footballClub) throws SQLException, Exception {
+    public void insertFootballClub(FootballClub footballClub) throws Exception {
         String insertQuery = "INSERT INTO football_club (club_name, number_of_wins, number_of_defeats," +
                 " number_of_draws, goals_received, goals_scored, number_of_points, number_of_played)" +
                 " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -34,18 +24,20 @@ public class FootballClubRepository {
         prepareStatement.setInt(7, footballClub.getNumberOfPoints());
         prepareStatement.setInt(8, footballClub.getNumberOfPlayed());
         prepareStatement.executeUpdate();
+        connect().close();
     }
 
-    public void deleteFootballClub(String name) throws SQLException {
+    public void deleteFootballClub(String clubName) throws SQLException {
         String deleteQuery = "DELETE FROM football_club WHERE club_name = clubName";
-        Statement statement = (Statement) connect().createStatement();
+        Statement statement = connect().createStatement();
         statement.executeUpdate(deleteQuery);
+        connect().close();
     }
 
     public List<FootballClub> selectFootballClub(String clubName) throws SQLException {
-        ArrayList<FootballClub> clubs = new ArrayList<FootballClub>();
+        ArrayList<FootballClub> clubs = new ArrayList<>();
         String selectQuery = "SELECT * FROM football_club WHERE club_name = clubName";
-        Statement statement = (Statement) connect().createStatement();
+        Statement statement = connect().createStatement();
         ResultSet resultSet = statement.executeQuery(selectQuery);
         if (resultSet.next())
             while (resultSet.next()) {
@@ -59,6 +51,7 @@ public class FootballClubRepository {
                         resultSet.getInt("number_of_played"));
                 clubs.add(footballClub);
             }
+        connect().close();
         return clubs;
     }
 }
