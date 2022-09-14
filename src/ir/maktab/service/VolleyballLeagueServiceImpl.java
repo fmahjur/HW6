@@ -11,9 +11,7 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
     static List<VolleyballClub> volleyballClubList = new ArrayList<>();
     static List<VolleyballClub> sortedVolleyballClubList;
 
-    @Override
-    public void addClub(String clubName) {
-        VolleyballClub volleyballClub = new VolleyballClub(clubName);
+    public void addClub(VolleyballClub volleyballClub) {
         volleyballClubList.add(volleyballClub);
     }
 

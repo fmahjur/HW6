@@ -3,8 +3,6 @@ package ir.maktab.repository;
 import ir.maktab.model.entity.FootballClub;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import static ir.maktab.repository.DBConnection.getConnection;
 
@@ -36,14 +34,14 @@ public class FootballClubRepository {
     }
 
     public void deleteFootballClub(String clubName) throws SQLException {
-        String deleteQuery = "DELETE FROM football_club WHERE club_name = clubName";
+        String deleteQuery = "DELETE FROM football_club WHERE club_name =  \'" + clubName + "\'";
         Statement statement = getConnection().createStatement();
         statement.executeUpdate(deleteQuery);
         getConnection().close();
     }
 
     public FootballClub selectFootballClub(String clubName) throws SQLException {
-        String selectQuery = "SELECT * FROM football_club WHERE club_name = clubName";
+        String selectQuery = "SELECT * FROM football_club WHERE club_name = \'" + clubName + "\'";
         Statement statement = getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(selectQuery);
         FootballClub footballClub = null;

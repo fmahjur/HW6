@@ -1,7 +1,8 @@
 package ir.maktab.service.interfaces;
 
+import ir.maktab.model.entity.SportClub;
+
 public interface LeagueService {
-    void addClub(String clubName);
 
     boolean deleteClub(String clubName);
 

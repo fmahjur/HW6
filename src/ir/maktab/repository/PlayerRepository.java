@@ -2,8 +2,11 @@ package ir.maktab.repository;
 
 public class PlayerRepository {
     private static PlayerRepository instance = new PlayerRepository();
-    private PlayerRepository(){}
-    private static PlayerRepository getInstance(){
+
+    private PlayerRepository() {
+    }
+
+    private static PlayerRepository getInstance() {
         return instance;
     }
 }

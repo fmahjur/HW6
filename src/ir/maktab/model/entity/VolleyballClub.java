@@ -6,13 +6,6 @@ public class VolleyballClub extends SportClub {
     private int numberOfRoundsWin;
     private int NumberOfRoundsDefeat;
 
-    public VolleyballClub() {
-    }
-
-    public VolleyballClub(String name) {
-        this.nameOfTheClub = name;
-    }
-
     public VolleyballClub(String nameOfTheClub, int numberOFWins, int numberOfDefeats, int numberOfRoundsWin,
                           int numberOfRoundsDefeat, int numberOfPoints, int numberOfPlayed) {
         this.nameOfTheClub = nameOfTheClub;

@@ -3,7 +3,6 @@ package ir.maktab.model.entity;
 import ir.maktab.model.enums.LeagueType;
 
 import java.util.Date;
-import java.util.List;
 
 public class League {
     private Date startLeagueDate;

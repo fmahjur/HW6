@@ -6,10 +6,6 @@ public class FootballClub extends SportClub {
     private int goalsReceived;
     private int goalsScored;
 
-    public FootballClub(String name) {
-        this.nameOfTheClub = name;
-    }
-
     public FootballClub(String nameOfTheClub, int numberOFWins, int numberOfDefeats, int numberOfDraws,
                         int goalsReceived, int goalsScored, int numberOfPoints, int numberOfPlayed) {
         this.nameOfTheClub = nameOfTheClub;

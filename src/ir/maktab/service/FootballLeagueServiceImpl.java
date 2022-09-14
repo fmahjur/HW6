@@ -11,9 +11,7 @@ public class FootballLeagueServiceImpl implements LeagueService {
     static List<FootballClub> footballClubList = new ArrayList<>();
     static List<FootballClub> sortedFootballClubList;
 
-    @Override
-    public void addClub(String clubName) {
-        FootballClub footballClub = new FootballClub(clubName);
+    public void addClub(FootballClub footballClub) {
         footballClubList.add(footballClub);
     }
 
