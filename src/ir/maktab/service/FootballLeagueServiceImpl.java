@@ -1,8 +1,8 @@
-package service;
+package ir.maktab.service;
 
-import model.entity.FootballClub;
-import service.interfaces.LeagueService;
-import view.ShowFootballDetailsTable;
+import ir.maktab.entity.FootballClub;
+import ir.maktab.service.interfaces.LeagueService;
+import ir.maktab.view.ShowFootballDetailsTable;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,15 @@
-package view;
+package ir.maktab.view;
 
-import model.entity.FootballClub;
-import service.FootballLeagueServiceImpl;
+import ir.maktab.entity.VolleyballClub;
+import ir.maktab.service.VolleyballLeagueServiceImpl;
 
 import java.util.Scanner;
 
 import static java.lang.System.exit;
 
-public class FootballMenu {
+public class VolleyballMenu {
     Scanner scanner = new Scanner(System.in);
+
     public void start() {
         System.out.println("• 1 : Create a new football club");
         System.out.println("• 2 : Delete a football club");
@@ -19,8 +20,8 @@ public class FootballMenu {
         System.out.print("Enter your choice : ");
         String choice = scanner.next();
         switch (choice) {
-            case "1" -> addFootballClub();
-            case "2" -> deleteFootballClub();
+            case "1" -> addVolleyballClub();
+            case "2" -> deleteVolleyballClub();
             case "3" -> showClubDetailsInfo();
             case "4" -> displayDetailsOfTeamsINLeague();
             case "5" -> addNewPlay();
@@ -33,35 +34,33 @@ public class FootballMenu {
 
     }
 
-    public void addFootballClub() {
-        FootballClub football = new FootballClub("", 0, 0, 0, 0, 0, 0, 0);
-        System.out.print("Please Enter the name of the football club : ");
-        String name = (scanner.nextLine());
+    public void addVolleyballClub() {
+        VolleyballClub volleyballClub = new VolleyballClub("", 0, 0, 0, 0, 0, 0);
+        System.out.print("Please Enter the name of the volleyball club : ");
+        String name = scanner.nextLine();
         System.out.print("Do you want to add club details info? (Y/N):");
         String choices = scanner.nextLine();
-        FootballLeagueServiceImpl club = new FootballLeagueServiceImpl();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         if (choices.equalsIgnoreCase("Y")) {
             System.out.print("please enter the number of wins: ");
             int wins = scanner.nextInt();
             System.out.print("please enter the number of defeats: ");
             int defeats = scanner.nextInt();
-            System.out.print("please enter the number of draws: ");
-            int draws = scanner.nextInt();
-            System.out.print("please enter the number of goals received: ");
-            int goalsReceived = scanner.nextInt();
-            System.out.print("please enter the number of goals scored: ");
-            int defeatsScored = scanner.nextInt();
+            System.out.print("please enter the number of rounds win: ");
+            int numberOfRoundsWin = scanner.nextInt();
+            System.out.print("please enter the number of rounds defeat: ");
+            int numberOfRoundsDefeat = scanner.nextInt();
             System.out.print("please enter the number of points: ");
             int points = scanner.nextInt();
             System.out.print("please enter the number of matches played: ");
             int matches = scanner.nextInt();
             //send the object and other details to the football class
-            club.addClub(football, name, wins, defeats, draws, goalsReceived, defeatsScored, points, matches);
+            volleyballLeague.addClub(volleyballClub, name, wins, defeats, numberOfRoundsWin, numberOfRoundsDefeat, points, matches);
             System.out.println("Do you want to add another club? (Y/N)");
             String choice = scanner.nextLine();
 
             if (choice.equalsIgnoreCase("Y")) {
-                addFootballClub();
+                addVolleyballClub();
             } else if (choice.equalsIgnoreCase("N")) {
                 start();
             } else {
@@ -72,7 +71,7 @@ public class FootballMenu {
             start();
 
         } else if (choices.equalsIgnoreCase("N")) {
-            club.addClub(name);
+            volleyballLeague.addClub(name);
             start();
         } else {
             System.err.print("Please input a valid character!");
@@ -80,13 +79,13 @@ public class FootballMenu {
         }
     }
 
-    public void deleteFootballClub() {
+    public void deleteVolleyballClub() {
         System.out.println("List of clubs in this league:");
-        FootballLeagueServiceImpl football = new FootballLeagueServiceImpl();
-        football.displayTournamentTable();
-        System.out.println("Please Enter the name of the football club you want to delete : ");
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
+        volleyballLeague.displayTournamentTable();
+        System.out.println("Please Enter the name of the volleyball club you want to delete : ");
         String deletedClubName = scanner.nextLine();
-        boolean result = football.deleteClub(deletedClubName);
+        boolean result = volleyballLeague.deleteClub(deletedClubName);
         if (result) {
             System.out.println(deletedClubName + "removed from this tournament!");
         } else {
@@ -96,7 +95,7 @@ public class FootballMenu {
         System.out.println("Do you want to delete another club? (Y/N)");
         String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y")) {
-            deleteFootballClub();
+            deleteVolleyballClub();
         } else if (choice.equalsIgnoreCase("N")) {
             start();
         } else {
@@ -106,11 +105,11 @@ public class FootballMenu {
 
     public void showClubDetailsInfo() {
         System.out.println("List of clubs in this league:");
-        FootballLeagueServiceImpl football = new FootballLeagueServiceImpl();
-        football.displayTournamentTable();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
+        volleyballLeague.displayTournamentTable();
         System.out.println("please enter the club name that you want to see details: ");
         String name = scanner.nextLine();
-        football.showClubInfo(name);
+        volleyballLeague.showClubInfo(name);
         System.out.println("Do you want to see another club info? (Y/N)");
         String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y")) {
@@ -124,8 +123,8 @@ public class FootballMenu {
     }
 
     public void displayDetailsOfTeamsINLeague() {
-        FootballLeagueServiceImpl footballLeague = new FootballLeagueServiceImpl();
-        footballLeague.displayTournamentTable();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
+        volleyballLeague.displayTournamentTable();
         System.out.println("Do you want to go back and chose another option? (Y/N)");
         String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("Y"))
@@ -135,15 +134,15 @@ public class FootballMenu {
     }
 
     public void addNewPlay() {
-        FootballLeagueServiceImpl footballLeague = new FootballLeagueServiceImpl();
+        VolleyballLeagueServiceImpl volleyballLeague = new VolleyballLeagueServiceImpl();
         System.out.println("Please enter the name of team1: ");
         String team1 = scanner.nextLine();
         System.out.println("Please enter the name of team2: ");
         String team2 = scanner.nextLine();
-        System.out.println("Please enter the number of goals scored by team1: ");
-        int goalsScoredByTeam1 = scanner.nextInt();
-        System.out.println("Please enter the number of goals scored by team2: ");
-        int goalsScoredByTeam2 = scanner.nextInt();
-        footballLeague.addPlayAndUpdateScores(team1, team2, goalsScoredByTeam1, goalsScoredByTeam2);
+        System.out.println("Please enter the number of rounds win by team1: ");
+        int roundsWinTeam1 = scanner.nextInt();
+        System.out.println("Please enter the number of rounds win by team2: ");
+        int roundsWinTeam2 = scanner.nextInt();
+        volleyballLeague.addPlayAndUpdateScores(team1, team2, roundsWinTeam1, roundsWinTeam2);
     }
 }

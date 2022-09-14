@@ -1,4 +1,4 @@
-package repository;
+package ir.maktab.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

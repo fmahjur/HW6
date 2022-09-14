@@ -1,5 +1,7 @@
-import view.FootballMenu;
-import view.VolleyballMenu;
+package ir.maktab;
+
+import ir.maktab.view.FootballMenu;
+import ir.maktab.view.VolleyballMenu;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package service.interfaces;
+package ir.maktab.service.interfaces;
 
 public interface LeagueService {
     void addClub(String clubName);

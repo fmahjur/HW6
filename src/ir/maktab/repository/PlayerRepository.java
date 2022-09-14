@@ -1,4 +1,4 @@
-package repository;
+package ir.maktab.repository;
 
 public class PlayerRepository {
     private static PlayerRepository instance = new PlayerRepository();

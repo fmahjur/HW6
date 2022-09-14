@@ -1,12 +1,12 @@
-package repository;
+package ir.maktab.repository;
 
-import model.entity.VolleyballClub;
+import ir.maktab.entity.VolleyballClub;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static repository.DBConnection.getConnection;
+import static ir.maktab.repository.DBConnection.getConnection;
 
 public class VolleyballClubRepository {
     private static VolleyballClubRepository instance = new VolleyballClubRepository();

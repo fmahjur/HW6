@@ -1,12 +1,12 @@
-package repository;
+package ir.maktab.repository;
 
-import model.entity.FootballClub;
+import ir.maktab.entity.FootballClub;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static repository.DBConnection.getConnection;
+import static ir.maktab.repository.DBConnection.getConnection;
 
 public class FootballClubRepository {
     private static FootballClubRepository instance = new FootballClubRepository();
