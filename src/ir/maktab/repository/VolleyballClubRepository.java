@@ -10,8 +10,11 @@ import static ir.maktab.repository.DBConnection.getConnection;
 
 public class VolleyballClubRepository {
     private static VolleyballClubRepository instance = new VolleyballClubRepository();
-    private VolleyballClubRepository(){}
-    public static VolleyballClubRepository getInstance(){
+
+    private VolleyballClubRepository() {
+    }
+
+    public static VolleyballClubRepository getInstance() {
         return instance;
     }
 

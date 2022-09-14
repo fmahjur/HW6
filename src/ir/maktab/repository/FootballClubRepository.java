@@ -10,8 +10,11 @@ import static ir.maktab.repository.DBConnection.getConnection;
 
 public class FootballClubRepository {
     private static FootballClubRepository instance = new FootballClubRepository();
-    private FootballClubRepository(){}
-    public static FootballClubRepository getInstance(){
+
+    private FootballClubRepository() {
+    }
+
+    public static FootballClubRepository getInstance() {
         return instance;
     }
 
