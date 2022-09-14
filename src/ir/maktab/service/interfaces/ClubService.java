@@ -1,7 +1,8 @@
 package ir.maktab.service.interfaces;
 
-import ir.maktab.model.entity.SportClub;
+import java.sql.SQLException;
 
 public interface ClubService {
-
+    void deleteClub(String nameOfTheClub) throws SQLException;
+    void showClubInfo(String nameOfTheClub) throws SQLException;
 }

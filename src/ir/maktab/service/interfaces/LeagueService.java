@@ -5,7 +5,7 @@ public interface LeagueService {
 
     boolean deleteClub(String clubName);
 
-    void addPlay(String club1, String club2);
+    void addPlayAndUpdateScores(String club1, String club2, int scoredByTeam1, int scoredByTeam2);
 
     void showClubInfo(String clubName);
 

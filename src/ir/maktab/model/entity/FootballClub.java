@@ -52,12 +52,17 @@ public class FootballClub extends SportClub {
 
     @Override
     public String toString() {
-        return "goalsReceived=" + goalsReceived +
-                ", goalsScored=" + goalsScored +
-                ", nameOfTheClub='" + nameOfTheClub + '\'' +
-                ", countOFWins=" + numberOFWins +
-                ", countOfDefeats=" + numberOfDefeats +
-                ", numberOfPoints=" + numberOfPoints +
-                ", numberOfPlayed=" + numberOfPlayed;
+        return nameOfTheClub + " club \n" +
+                "------------------------------------------------------------------------------------------------------------------------------" + "\n" +
+                "| goalsReceived | goalsScored | numberOfWins | numberOfDefeats | numberOfDraws | numberOfPoints | numberOfPlayed |" + "\n" +
+                "------------------------------------------------------------------------------------------------------------------------------" + "\n" +
+                "|         " + goalsReceived + "         " +
+                "|      " + goalsScored + "      " +
+                "|       " + numberOFWins + "      " +
+                "|        " + numberOfDefeats + "        " +
+                "|       " + numberOfDraws + "       " +
+                "|        " + numberOfPoints + "       " +
+                "|        " + numberOfPlayed + "       |\n" +
+                "------------------------------------------------------------------------------------------------------------------------------\n";
     }
 }

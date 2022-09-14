@@ -42,24 +42,22 @@ public class FootballClubRepository {
         getConnection().close();
     }
 
-    public List<FootballClub> selectFootballClub(String clubName) throws SQLException {
-        ArrayList<FootballClub> clubs = new ArrayList<>();
+    public FootballClub selectFootballClub(String clubName) throws SQLException {
         String selectQuery = "SELECT * FROM football_club WHERE club_name = clubName";
         Statement statement = getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(selectQuery);
-        if (resultSet.next())
-            while (resultSet.next()) {
-                FootballClub footballClub = new FootballClub(resultSet.getString("club_name"),
-                        resultSet.getInt("number_of_wins"),
-                        resultSet.getInt("number_of_defeats"),
-                        resultSet.getInt("number_of_draws"),
-                        resultSet.getInt("goals_received"),
-                        resultSet.getInt("goals_scored"),
-                        resultSet.getInt("number_of_points"),
-                        resultSet.getInt("number_of_played"));
-                clubs.add(footballClub);
-            }
+        FootballClub footballClub = null;
+        if (resultSet.next()) {
+            footballClub = new FootballClub(resultSet.getString("club_name"),
+                    resultSet.getInt("number_of_wins"),
+                    resultSet.getInt("number_of_defeats"),
+                    resultSet.getInt("number_of_draws"),
+                    resultSet.getInt("goals_received"),
+                    resultSet.getInt("goals_scored"),
+                    resultSet.getInt("number_of_points"),
+                    resultSet.getInt("number_of_played"));
+        }
         getConnection().close();
-        return clubs;
+        return footballClub;
     }
 }

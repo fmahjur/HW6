@@ -28,10 +28,6 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public void addPlay(String club1, String club2) {
-
-    }
-
     public void addPlayAndUpdateScores(String team1, String team2, int numberOfRoundsWinTeam1, int numberOfRoundsWinTeam2) {
         int deferenceOfPoints = numberOfRoundsWinTeam1 - numberOfRoundsWinTeam2;
         String winnerTeam;
@@ -65,13 +61,6 @@ public class VolleyballLeagueServiceImpl implements LeagueService {
                 }
             }
         }
-    }
-
-    public void showClubsInfo() {
-        for (VolleyballClub volleyballClub : volleyballClubList) {
-            System.out.print(volleyballClub.getNameOfTheClub() + " | ");
-        }
-        System.out.println();
     }
 
     @Override

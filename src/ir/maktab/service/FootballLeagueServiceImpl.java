@@ -28,21 +28,18 @@ public class FootballLeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public void addPlay(String club1, String club2) {
-    }
-
-    public void addPlayAndUpdateScores(String team1, String team2, int goalsScoredByTeam1, int goalsScoredByTeam2) {
+    public void addPlayAndUpdateScores(String team1, String team2, int scoredByTeam1, int scoredByTeam2) {
         String winnerTeam = "";
-        if (goalsScoredByTeam1 > goalsScoredByTeam2)
+        if (scoredByTeam1 > scoredByTeam2)
             winnerTeam = team1;
-        else if (goalsScoredByTeam2 > goalsScoredByTeam1)
+        else if (scoredByTeam2 > scoredByTeam1)
             winnerTeam = team2;
 
         for (FootballClub club : footballClubList) {
             if (club.getNameOfTheClub().equals(team1)) {
                 club.setNumberOfPlayed(club.getNumberOfPlayed() + 1);
-                club.setGoalsScored(club.getGoalsScored() + goalsScoredByTeam1);
-                club.setGoalsReceived(club.getGoalsReceived() + goalsScoredByTeam2);
+                club.setGoalsScored(club.getGoalsScored() + scoredByTeam1);
+                club.setGoalsReceived(club.getGoalsReceived() + scoredByTeam2);
                 if (winnerTeam.equals(team1)) {
                     club.setNumberOFWins(club.getNumberOFWins() + 1);
                     club.setNumberOfPoints(club.getNumberOfPoints() + 3);
@@ -52,8 +49,8 @@ public class FootballLeagueServiceImpl implements LeagueService {
                 }
             } else if (club.getNameOfTheClub().equals(team2)) {
                 club.setNumberOfPlayed(club.getNumberOfPlayed() + 1);
-                club.setGoalsScored(club.getGoalsScored() + goalsScoredByTeam2);
-                club.setGoalsReceived(club.getGoalsReceived() + goalsScoredByTeam1);
+                club.setGoalsScored(club.getGoalsScored() + scoredByTeam2);
+                club.setGoalsReceived(club.getGoalsReceived() + scoredByTeam1);
                 if (winnerTeam.equals(team2)) {
                     club.setNumberOFWins(club.getNumberOFWins() + 1);
                     club.setNumberOfPoints(club.getNumberOfPoints() + 3);

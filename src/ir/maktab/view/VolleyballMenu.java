@@ -55,7 +55,7 @@ public class VolleyballMenu {
             System.out.print("please enter the number of matches played: ");
             int matches = scanner.nextInt();
             //send the object and other details to the football class
-            volleyballLeague.addClub(volleyballClub, name, wins, defeats, numberOfRoundsWin, numberOfRoundsDefeat, points, matches);
+            //volleyballLeague.addClub(volleyballClub, name, wins, defeats, numberOfRoundsWin, numberOfRoundsDefeat, points, matches);
             System.out.println("Do you want to add another club? (Y/N)");
             String choice = scanner.nextLine();
 

@@ -55,13 +55,16 @@ public class VolleyballClub extends SportClub {
 
     @Override
     public String toString() {
-        return "numberOfRoundsWin=" + numberOfRoundsWin +
-                ", NumberOfRoundsDefeat=" + NumberOfRoundsDefeat +
-                ", nameOfTheClub='" + nameOfTheClub + '\'' +
-                ", numberOFWins=" + numberOFWins +
-                ", numberOfDefeats=" + numberOfDefeats +
-                ", numberOfDraws=" + numberOfDraws +
-                ", numberOfPoints=" + numberOfPoints +
-                ", numberOfPlayed=" + numberOfPlayed;
+        return nameOfTheClub + " club \n" +
+                "---------------------------------------------------------------------------------------------------------------" + "\n" +
+                "| numberOfRoundsWin | numberOfRoundsDefeat | numberOfWins | numberOfDefeats | numberOfPoints | numberOfPlayed |" + "\n" +
+                "---------------------------------------------------------------------------------------------------------------" + "\n" +
+                "|         " + numberOfRoundsWin + "         " +
+                "|           " + NumberOfRoundsDefeat + "          " +
+                "|       " + numberOFWins + "      " +
+                "|        " + numberOfDefeats + "        " +
+                "|        " + numberOfPoints + "       " +
+                "|        " + numberOfPlayed + "       |\n" +
+                "---------------------------------------------------------------------------------------------------------------\n";
     }
 }

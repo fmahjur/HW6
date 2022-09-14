@@ -16,7 +16,15 @@ public class FootballClubServiceImpl implements ClubService {
         footballClubRepository.insertFootballClub(club);
     }
 
+    @Override
     public void deleteClub(String nameOfTheClub) throws SQLException {
         footballClubRepository.deleteFootballClub(nameOfTheClub);
+    }
+
+    @Override
+    public void showClubInfo(String nameOfTheClub) throws SQLException {
+        FootballClub footballClub = footballClubRepository.selectFootballClub(nameOfTheClub);
+        System.out.print(footballClub.toString());
+        System.out.println();
     }
 }
